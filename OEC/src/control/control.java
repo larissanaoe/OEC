@@ -1,10 +1,42 @@
 
 package control;
 
+import java.net.DatagramPacket;
+import java.net.DatagramSocket;
+
 public class control {
 
     public static void main(String[] args) {
+        DatagramSocket server; 
+    DatagramPacket pacote; 
+        byte[] dados;
         
+        try{ 
+            server = new DatagramSocket(4448);
+           
+            System.out.println("Aguardando...");
+            String msg = "";
+            while (!msg.equals("exit")){
+                dados = new byte[1024];
+                pacote = new DatagramPacket(dados, dados.length);
+                
+                server.receive(pacote);
+                msg = new String(pacote.getData());
+                msg = msg.trim();
+                System.out.println("Recebido: " + msg);
+                System.out.print("De: " + pacote.getAddress().getHostAddress());
+                System.out.println(" : " + pacote.getPort());
+                
+                dados = msg.toUpperCase().getBytes();
+                pacote = new DatagramPacket(dados, dados.length,pacote.getAddress(),pacote.getPort());
+                server.send(pacote);
+                
+            }
+
+        }catch (Exception e) {
+            System.out.println("Erro" + e.getMessage());
+        }
+    
     }
     
 }
