@@ -7,6 +7,16 @@ import java.net.DatagramSocket;
 public class control {
 
     public static void main(String[] args) {
+        conServer connect = new conServer();
+        conServer connect2 = new conServer();
+        conServer connect3 = new conServer();
+        connect.start();
+        connect2.start();
+        connect3.start();
+        
+        
+        
+        
         DatagramSocket server; 
     DatagramPacket pacote; 
         byte[] dados;
