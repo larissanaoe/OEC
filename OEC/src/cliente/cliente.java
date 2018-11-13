@@ -1,9 +1,11 @@
 
 package cliente;
 
+import java.io.PrintStream;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
+import java.net.Socket;
 import java.util.Scanner;
 
 public class cliente {
@@ -12,14 +14,12 @@ public class cliente {
     public static void main(String[] args) {
         
         int option =0;
-        DatagramSocket cliente; 
-        DatagramPacket pacote; 
-        InetAddress ender;
+        Socket cliente; 
         Scanner texto;
         @SuppressWarnings("UnusedAssignment")
         byte[] dados = new byte[1024];
         
-        String operation;
+        String operation = "nadahhh";
         
         System.out.println(" _  _  ____  __ _  _  _    ____  ____  __  __ _   ___  __  ____   __   __   ");
         System.out.println("( \\/ )(  __)(  ( \\/ )( \\  (  _ \\(  _ \\(  )(  ( \\ / __)(  )(  _ \\ / _\\ (  )  ");
@@ -113,7 +113,7 @@ public class cliente {
                         break;
                         
                     default:
-                        System.out.println("DIGITE UM NUMERO VALIDO");
+                        System.out.println("DIGITE UM NÚMERO VÁLIDO");
                         break;
                 }
                 
@@ -125,30 +125,19 @@ public class cliente {
                 
             default:
                 break;
-                    }
-        try {
-            ender = InetAddress.getByName("127.0.0.1");
-            String msg = "";
-            while(!msg.equals("exit")){
-                texto = new Scanner(System.in);
-                msg = texto.nextLine();
-
-                dados = msg.getBytes();
-                pacote = new DatagramPacket(dados, dados.length, ender, 4448);
-                cliente = new DatagramSocket();
-                cliente.send(pacote);
                 
-                cliente.receive(pacote);
-                msg = new String(pacote.getData());
-                msg = msg.trim();
-                System.out.println("Recebido: " + msg);
+    }
+        try {
+            cliente = new Socket("127.0.0.1",3322);
+            PrintStream saida = new PrintStream(cliente.getOutputStream());
+                
+            saida.println(operation);
+
+        } 
+            catch (Exception e) {
+                System.out.println("Erro: " + e.getMessage());
+            
             }
-            
-            
-            
-        } catch (Exception e) {
-            System.out.println("Erro: " + e.getMessage());
-        }
             
         }
         

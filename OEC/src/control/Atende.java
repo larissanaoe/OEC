@@ -9,6 +9,6 @@ package control;
  *
  * @author lab803
  */
-public class select {
+public class Atende {
     
 }

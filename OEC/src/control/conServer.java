@@ -1,50 +1,49 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package control;
 
-import java.net.DatagramPacket;
-import java.net.DatagramSocket;
-import java.net.InetAddress;
+import java.io.PrintStream;
+import java.net.Socket;
 import java.util.Scanner;
 
-/**
- *
- * @author lab803
- */
+
+
 public class conServer extends Thread {
+    String operation; 
+    int Socket;
     public void run(){
-        DatagramSocket cliente; 
-        DatagramPacket pacote; 
-        InetAddress ender;
+            
         Scanner texto;
-        @SuppressWarnings("UnusedAssignment")
-        byte[] dados = new byte[1024];
+        Socket cliente; 
         
         try {
-            ender = InetAddress.getByName("127.0.0.1");
-            String msg = "";
-            while(!msg.equals("exit")){
-                texto = new Scanner(System.in);
-                msg = texto.nextLine();
 
-                dados = msg.getBytes();
-                pacote = new DatagramPacket(dados, dados.length, ender, 4448);
-                cliente = new DatagramSocket();
-                cliente.send(pacote);
+            cliente = new Socket("127.0.0.1", Socket);
+            PrintStream saida = new PrintStream(cliente.getOutputStream());
                 
-                cliente.receive(pacote);
-                msg = new String(pacote.getData());
-                msg = msg.trim();
-                System.out.println("Recebido: " + msg);
-            }
+            saida.println(operation);
+                
+            
             
             
             
         } catch (Exception e) {
             System.out.println("Erro: " + e.getMessage());
         }
+    }
+
+    public String getOperation() {
+        return operation;
+    }
+
+    public void setOperation(String operation) {
+        this.operation = operation;
+    }
+
+    public int getSocket() {
+        return Socket;
+    }
+
+    public void setSocket(int Socket) {
+        this.Socket = Socket;
     }
 }
