@@ -39,10 +39,7 @@ public class Sqlcommands {
         String Arraypedido[] = new String[5];
         Arraypedido = pedido.split(",");
         
-        if(Arraypedido.length == 0){
-            sql = "SELECT * from Musicas;";
-            
-        }else if(!Arraypedido[0].equals(" ")){
+        if(!Arraypedido[0].equals(" ")){
             sql = "SELECT * from Musicas" +
                     " WHERE musica= '"+ Arraypedido[1]+"';";
             
@@ -53,6 +50,9 @@ public class Sqlcommands {
         }else if(!Arraypedido[2].equals(" ")){
             sql = "SELECT * from Musicas" +
                     " WHERE artista= '"+ Arraypedido[3]+"';";
+        }else{
+            sql = "SELECT * from Musicas;";
+            
         }
         
         String resp = banco.executa(sql,true,database);
