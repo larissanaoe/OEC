@@ -1,0 +1,105 @@
+STATUS | wrapper  | 2018/11/14 07:22:49 | --> Wrapper Started as Console
+STATUS | wrapper  | 2018/11/14 07:22:49 | Launching a JVM...
+INFO   | jvm 1    | 2018/11/14 07:22:50 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+INFO   | jvm 1    | 2018/11/14 07:22:50 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+INFO   | jvm 1    | 2018/11/14 07:22:50 | 
+INFO   | jvm 1    | 2018/11/14 07:22:50 | 
+INFO   | jvm 1    | 2018/11/14 07:22:50 | WARNING - Unable to load the Wrapper's native library 'wrapper.dll'.
+INFO   | jvm 1    | 2018/11/14 07:22:50 |           The file is located on the path at the following location but
+INFO   | jvm 1    | 2018/11/14 07:22:50 |           could not be loaded:
+INFO   | jvm 1    | 2018/11/14 07:22:50 |             C:\Users\lab803.ANHEMBIMORUMBI\Desktop\gitgud\OEC\h2-2018-03-18\h2\service\.\wrapper.dll
+INFO   | jvm 1    | 2018/11/14 07:22:50 |           Please verify that the file is readable by the current user
+INFO   | jvm 1    | 2018/11/14 07:22:50 |           and that the file has not been corrupted in any way.
+INFO   | jvm 1    | 2018/11/14 07:22:50 |           One common cause of this problem is running a 32-bit version
+INFO   | jvm 1    | 2018/11/14 07:22:50 |           of the Wrapper with a 64-bit version of Java, or vica versa.
+INFO   | jvm 1    | 2018/11/14 07:22:50 |           This is a 64-bit JVM.
+INFO   | jvm 1    | 2018/11/14 07:22:50 |           Reported cause:
+INFO   | jvm 1    | 2018/11/14 07:22:50 |             C:\Users\lab803.ANHEMBIMORUMBI\Desktop\gitgud\OEC\h2-2018-03-18\h2\service\wrapper.dll: Can't load IA 32-bit .dll on a AMD 64-bit platform
+INFO   | jvm 1    | 2018/11/14 07:22:50 |           System signals will not be handled correctly.
+INFO   | jvm 1    | 2018/11/14 07:22:50 | 
+INFO   | jvm 1    | 2018/11/14 07:22:51 | TCP server running at tcp://10.159.122.162:9092 (only local connections)
+INFO   | jvm 1    | 2018/11/14 07:22:51 | Web Console server running at http://10.159.122.162:8082 (only local connections)
+STATUS | wrapper  | 2018/11/14 07:22:57 | --> Wrapper Started as Console
+STATUS | wrapper  | 2018/11/14 07:22:58 | Launching a JVM...
+INFO   | jvm 1    | 2018/11/14 07:22:58 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+INFO   | jvm 1    | 2018/11/14 07:22:58 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+INFO   | jvm 1    | 2018/11/14 07:22:58 | 
+INFO   | jvm 1    | 2018/11/14 07:22:58 | 
+INFO   | jvm 1    | 2018/11/14 07:22:58 | WARNING - Unable to load the Wrapper's native library 'wrapper.dll'.
+INFO   | jvm 1    | 2018/11/14 07:22:58 |           The file is located on the path at the following location but
+INFO   | jvm 1    | 2018/11/14 07:22:58 |           could not be loaded:
+INFO   | jvm 1    | 2018/11/14 07:22:58 |             C:\Users\lab803.ANHEMBIMORUMBI\Desktop\gitgud\OEC\h2-2018-03-18\h2\service\.\wrapper.dll
+INFO   | jvm 1    | 2018/11/14 07:22:58 |           Please verify that the file is readable by the current user
+INFO   | jvm 1    | 2018/11/14 07:22:58 |           and that the file has not been corrupted in any way.
+INFO   | jvm 1    | 2018/11/14 07:22:58 |           One common cause of this problem is running a 32-bit version
+INFO   | jvm 1    | 2018/11/14 07:22:58 |           of the Wrapper with a 64-bit version of Java, or vica versa.
+INFO   | jvm 1    | 2018/11/14 07:22:58 |           This is a 64-bit JVM.
+INFO   | jvm 1    | 2018/11/14 07:22:58 |           Reported cause:
+INFO   | jvm 1    | 2018/11/14 07:22:58 |             C:\Users\lab803.ANHEMBIMORUMBI\Desktop\gitgud\OEC\h2-2018-03-18\h2\service\wrapper.dll: Can't load IA 32-bit .dll on a AMD 64-bit platform
+INFO   | jvm 1    | 2018/11/14 07:22:58 |           System signals will not be handled correctly.
+INFO   | jvm 1    | 2018/11/14 07:22:58 | 
+INFO   | jvm 1    | 2018/11/14 07:22:58 | TCP server running at tcp://10.159.122.162:9092 (only local connections)
+INFO   | jvm 1    | 2018/11/14 07:22:58 | Web Console server running at http://10.159.122.162:8082 (only local connections)
+STATUS | wrapper  | 2018/11/14 07:27:20 | --> Wrapper Started as Console
+STATUS | wrapper  | 2018/11/14 07:27:20 | Launching a JVM...
+INFO   | jvm 1    | 2018/11/14 07:27:21 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+INFO   | jvm 1    | 2018/11/14 07:27:21 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+INFO   | jvm 1    | 2018/11/14 07:27:21 | 
+INFO   | jvm 1    | 2018/11/14 07:27:21 | 
+INFO   | jvm 1    | 2018/11/14 07:27:21 | WARNING - Unable to load the Wrapper's native library 'wrapper.dll'.
+INFO   | jvm 1    | 2018/11/14 07:27:21 |           The file is located on the path at the following location but
+INFO   | jvm 1    | 2018/11/14 07:27:21 |           could not be loaded:
+INFO   | jvm 1    | 2018/11/14 07:27:21 |             C:\Users\lab803.ANHEMBIMORUMBI\Desktop\gitgud\OEC\h2-2018-03-18\h2\service\.\wrapper.dll
+INFO   | jvm 1    | 2018/11/14 07:27:21 |           Please verify that the file is readable by the current user
+INFO   | jvm 1    | 2018/11/14 07:27:21 |           and that the file has not been corrupted in any way.
+INFO   | jvm 1    | 2018/11/14 07:27:21 |           One common cause of this problem is running a 32-bit version
+INFO   | jvm 1    | 2018/11/14 07:27:21 |           of the Wrapper with a 64-bit version of Java, or vica versa.
+INFO   | jvm 1    | 2018/11/14 07:27:21 |           This is a 64-bit JVM.
+INFO   | jvm 1    | 2018/11/14 07:27:21 |           Reported cause:
+INFO   | jvm 1    | 2018/11/14 07:27:21 |             C:\Users\lab803.ANHEMBIMORUMBI\Desktop\gitgud\OEC\h2-2018-03-18\h2\service\wrapper.dll: Can't load IA 32-bit .dll on a AMD 64-bit platform
+INFO   | jvm 1    | 2018/11/14 07:27:21 |           System signals will not be handled correctly.
+INFO   | jvm 1    | 2018/11/14 07:27:21 | 
+INFO   | jvm 1    | 2018/11/14 07:27:21 | TCP server running at tcp://10.159.122.162:9092 (only local connections)
+INFO   | jvm 1    | 2018/11/14 07:27:21 | Web Console server running at http://10.159.122.162:8082 (only local connections)
+STATUS | wrapper  | 2018/11/14 07:28:39 | --> Wrapper Started as Console
+STATUS | wrapper  | 2018/11/14 07:28:39 | Launching a JVM...
+INFO   | jvm 1    | 2018/11/14 07:28:39 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+INFO   | jvm 1    | 2018/11/14 07:28:39 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+INFO   | jvm 1    | 2018/11/14 07:28:39 | 
+INFO   | jvm 1    | 2018/11/14 07:28:39 | 
+INFO   | jvm 1    | 2018/11/14 07:28:39 | WARNING - Unable to load the Wrapper's native library 'wrapper.dll'.
+INFO   | jvm 1    | 2018/11/14 07:28:39 |           The file is located on the path at the following location but
+INFO   | jvm 1    | 2018/11/14 07:28:39 |           could not be loaded:
+INFO   | jvm 1    | 2018/11/14 07:28:39 |             C:\Users\lab803.ANHEMBIMORUMBI\Desktop\gitgud\OEC\h2-2018-03-18\h2\service\.\wrapper.dll
+INFO   | jvm 1    | 2018/11/14 07:28:39 |           Please verify that the file is readable by the current user
+INFO   | jvm 1    | 2018/11/14 07:28:39 |           and that the file has not been corrupted in any way.
+INFO   | jvm 1    | 2018/11/14 07:28:39 |           One common cause of this problem is running a 32-bit version
+INFO   | jvm 1    | 2018/11/14 07:28:39 |           of the Wrapper with a 64-bit version of Java, or vica versa.
+INFO   | jvm 1    | 2018/11/14 07:28:39 |           This is a 64-bit JVM.
+INFO   | jvm 1    | 2018/11/14 07:28:39 |           Reported cause:
+INFO   | jvm 1    | 2018/11/14 07:28:39 |             C:\Users\lab803.ANHEMBIMORUMBI\Desktop\gitgud\OEC\h2-2018-03-18\h2\service\wrapper.dll: Can't load IA 32-bit .dll on a AMD 64-bit platform
+INFO   | jvm 1    | 2018/11/14 07:28:39 |           System signals will not be handled correctly.
+INFO   | jvm 1    | 2018/11/14 07:28:39 | 
+INFO   | jvm 1    | 2018/11/14 07:28:39 | TCP server running at tcp://10.159.122.162:9092 (only local connections)
+INFO   | jvm 1    | 2018/11/14 07:28:39 | Web Console server running at http://10.159.122.162:8082 (only local connections)
+STATUS | wrapper  | 2018/11/14 07:35:52 | --> Wrapper Started as Console
+STATUS | wrapper  | 2018/11/14 07:35:52 | Launching a JVM...
+INFO   | jvm 1    | 2018/11/14 07:35:52 | Wrapper (Version 3.2.3) http://wrapper.tanukisoftware.org
+INFO   | jvm 1    | 2018/11/14 07:35:52 |   Copyright 1999-2006 Tanuki Software, Inc.  All Rights Reserved.
+INFO   | jvm 1    | 2018/11/14 07:35:52 | 
+INFO   | jvm 1    | 2018/11/14 07:35:52 | 
+INFO   | jvm 1    | 2018/11/14 07:35:52 | WARNING - Unable to load the Wrapper's native library 'wrapper.dll'.
+INFO   | jvm 1    | 2018/11/14 07:35:52 |           The file is located on the path at the following location but
+INFO   | jvm 1    | 2018/11/14 07:35:52 |           could not be loaded:
+INFO   | jvm 1    | 2018/11/14 07:35:52 |             C:\Users\lab803.ANHEMBIMORUMBI\Desktop\gitgud\OEC\h2-2018-03-18\h2\service\.\wrapper.dll
+INFO   | jvm 1    | 2018/11/14 07:35:52 |           Please verify that the file is readable by the current user
+INFO   | jvm 1    | 2018/11/14 07:35:52 |           and that the file has not been corrupted in any way.
+INFO   | jvm 1    | 2018/11/14 07:35:52 |           One common cause of this problem is running a 32-bit version
+INFO   | jvm 1    | 2018/11/14 07:35:52 |           of the Wrapper with a 64-bit version of Java, or vica versa.
+INFO   | jvm 1    | 2018/11/14 07:35:52 |           This is a 64-bit JVM.
+INFO   | jvm 1    | 2018/11/14 07:35:52 |           Reported cause:
+INFO   | jvm 1    | 2018/11/14 07:35:52 |             C:\Users\lab803.ANHEMBIMORUMBI\Desktop\gitgud\OEC\h2-2018-03-18\h2\service\wrapper.dll: Can't load IA 32-bit .dll on a AMD 64-bit platform
+INFO   | jvm 1    | 2018/11/14 07:35:52 |           System signals will not be handled correctly.
+INFO   | jvm 1    | 2018/11/14 07:35:52 | 
+INFO   | jvm 1    | 2018/11/14 07:35:53 | TCP server running at tcp://10.159.122.162:9092 (only local connections)
+INFO   | jvm 1    | 2018/11/14 07:35:53 | Web Console server running at http://10.159.122.162:8082 (only local connections)
