@@ -12,25 +12,36 @@ import java.util.Scanner;
 public class server {
 
     public static void main(String[] args) throws SQLException {
-        Startup start = new Startup();
+        Scanner scanint = new Scanner(System.in);
+        Scanner scan = new Scanner(System.in);
+
+        
+        System.out.println("Digite o socket");
+        int socket = scanint.nextInt();
+        
+        System.out.println("Digite o nome da database");
+        String database = scan.nextLine();
+        
+        Startup start = new Startup(database);
         start.Create();
         
+        String resp = "nadahhh";
         ServerSocket srv = null;
         Socket cliente = null;
         Scanner in = null;
         PrintStream out = null;
         
-        while(true){
         //istanciar o socket servidor
-            try {
-                srv = new ServerSocket(9876); //porta que eu peço pro SO
-                System.out.println("Servidor disponivel na porta 9876");
-            } catch (Exception e) {
-                System.out.println("Erro ao abrir a porta 9876");
-                System.out.println(e.getMessage());
-                return;
-            }
-
+        try {
+            srv = new ServerSocket(socket); //porta que eu peço pro SO
+            System.out.println("Servidor disponivel na porta 9876");
+        } catch (Exception e) {
+            System.out.println("Erro ao abrir a porta 9876");
+            System.out.println(e.getMessage());
+            return;
+        }
+        
+        while(true){
             //atender o pedido de conexão
             try{
                System.out.println("Aguardando a conexão de um cliente...");
@@ -49,22 +60,28 @@ public class server {
                 String msg = in.nextLine();
                 String array[] = new String[5];
                 array = msg.split(",");
-                Sqlcommands comando = new Sqlcommands();
+                Sqlcommands comando = new Sqlcommands(database);
 
                 if(array[0].equals("select")){
-                    comando.select(msg);
+                    resp = comando.select(msg);
+                    
                 }else if(array[0].equals("insert")){
-                    comando.insert(msg);
+                    resp = comando.insert(msg);
 
                 }else if(array[0].equals("delete")){
-                    comando.delete(array[1]);
+                    resp = comando.delete(array[1]);
 
                 }else if(array[0].equals("update")){
-                    comando.update(msg);
+                    resp = comando.update(msg);
 
                 }else{
                     System.out.println("comando mal definido");
                 }
+                
+                PrintStream saida = new PrintStream(cliente.getOutputStream());
+
+                saida.println(resp);
+                
 
                 System.out.println("Recebido: " + msg);
 
@@ -78,11 +95,9 @@ public class server {
             //Encerrar comunicação
             try{
                 cliente.close();
-    //            srv.close();
             }catch (Exception e){
                 System.out.println("Erro ao encerrar a comunicação.");
                 System.out.println("e.getMessage()");
-                return;
 
             }
         }

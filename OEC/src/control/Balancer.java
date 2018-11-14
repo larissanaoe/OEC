@@ -1,41 +1,57 @@
-
 package control;
 
+import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Balancer {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         int i = 0;
-        ArrayList servers = new ArrayList();
-        servers.add(9876);
-        servers.add(9875);
-        servers.add(9874);
+        ArrayList<Socket> servers = new ArrayList<Socket>();
+        
+        Scanner scan = new Scanner(System.in);
+        Scanner scanint = new Scanner(System.in);
+
+        for(int j = 0; j<3;j++){
+            System.out.println("Digite o socket numero "+(j+1));
+            System.out.println("Digite o endereço");
+            String address = scan.nextLine();
+            if (address.equals("local"))
+                address = "127.0.0.1";
+
+            System.out.println("Digite o socket");
+            int socket = scanint.nextInt();
+
+            servers.add(new Socket(address ,socket));
+        }
         
         ServerSocket server;
         Socket cli;
+        System.out.println("Digite o port deste server");
+        int socket = scanint.nextInt();
+        
         
         try {
-            server = new ServerSocket(9600);
+            server = new ServerSocket(socket);
             while(true){
                 cli = server.accept();
                 System.out.println("Conectado com " + cli.getInetAddress().getHostAddress());
-                Atende at = new Atende(cli);
+                
+                Atende at = new Atende(cli,servers.get(i));
                 at.start();
+                
+                if(i == 3){
+                    i = 0;
+                }else{
+                    i++;
+                }
+
             }
         } catch (Exception e) {
             System.out.println("Erro: "+ e.getMessage());
-        }
-        
-        
-        
-        while(i < 3){
-            conServer coneta = new conServer(); 
-            coneta.setSocket((int) servers.get(i));
-            coneta.setOperation(operation);
-            
         }
         
     }

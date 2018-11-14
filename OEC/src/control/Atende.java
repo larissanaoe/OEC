@@ -1,14 +1,50 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package control;
 
-/**
- *
- * @author lab803
- */
-public class Atende {
+import java.io.PrintStream;
+import java.net.Socket;
+import java.util.Scanner;
+
+public class Atende extends Thread{
+    Socket cli;
+    Socket server;
+    String resposta = "";
+    
+    public Atende(Socket cli, Socket server){
+        this.cli = cli;
+        this.server = server;
+    }
+
+    public String getResposta() {
+        return resposta;
+    }
+    
+    @Override
+    public void run(){
+        Scanner in;
+        PrintStream out;
+        String msg = "";
+        
+        try {
+            in = new Scanner(cli.getInputStream());
+            out = new PrintStream(cli.getOutputStream());
+            msg = in.nextLine();
+            System.out.println("Recebido: " + msg + 
+                        " de "+cli.getInetAddress().getHostAddress());
+            out.println("recebido.");
+            
+            
+            conServer connection = new conServer(msg, server);
+            
+            resposta = connection.Connect();
+            
+            out.println(resposta);
+            
+            System.out.println("Encerrou com "+ 
+                    cli.getInetAddress().getHostAddress());
+            cli.close();
+        } catch (Exception e) {
+            System.out.println("Erro:"+e.getMessage());
+        }
+    }
     
 }

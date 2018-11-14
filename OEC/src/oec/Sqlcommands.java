@@ -12,6 +12,11 @@ import java.sql.SQLException;
  * @author augusto
  */
 public class Sqlcommands {
+    String database;
+    public Sqlcommands(String database) {
+        this.database = database;
+    }
+    
     public String update(String pedido) throws SQLException{
         dbConn banco = new dbConn();
         String sql = "";
@@ -19,10 +24,10 @@ public class Sqlcommands {
         Arraypedido = pedido.split(",");
         
         sql = "UPDATE Musicas " +
-                    "SET musica= "+ Arraypedido[1] +", album= "+ Arraypedido[2]+"artista= "+ Arraypedido[3]+
-                    "WHERE id= "+ Arraypedido[4]+";";
+                    "SET musica= '"+ Arraypedido[1] +"', album= '"+ Arraypedido[2]+"',artista= '"+ Arraypedido[3]+
+                    "' WHERE id= '"+ Arraypedido[4]+"';";
         
-        String resp = banco.executa(sql);
+        String resp = banco.executa(sql,false,database);
         
         return resp;
     }
@@ -35,22 +40,22 @@ public class Sqlcommands {
         Arraypedido = pedido.split(",");
         
         if(Arraypedido.length == 0){
-            sql = "SELECT * from musicas;";
+            sql = "SELECT * from Musicas;";
             
         }else if(!Arraypedido[0].equals(" ")){
-            sql = "SELECT * from musicas" +
-                    "WHERE musica= "+ Arraypedido[1]+";";
+            sql = "SELECT * from Musicas" +
+                    " WHERE musica= '"+ Arraypedido[1]+"';";
             
         }else if(!Arraypedido[1].equals(" ")){
-            sql = "SELECT * from musicas" +
-                    "WHERE album= "+ Arraypedido[2]+";";
+            sql = "SELECT * from Musicas" +
+                    " WHERE album= '"+ Arraypedido[2]+"';";
             
         }else if(!Arraypedido[2].equals(" ")){
-            sql = "SELECT * from musicas" +
-                    "WHERE artista= "+ Arraypedido[3]+";";
+            sql = "SELECT * from Musicas" +
+                    " WHERE artista= '"+ Arraypedido[3]+"';";
         }
         
-        String resp = banco.executa(sql);
+        String resp = banco.executa(sql,true,database);
 
         return resp;
     }
@@ -59,9 +64,9 @@ public class Sqlcommands {
         dbConn banco = new dbConn();
 
 
-        sql = "delete from Musicas WHERE id= "+ pedido +";";
+        sql = "delete from Musicas WHERE id= '"+ pedido +"';";
         
-        String resp = banco.executa(sql);
+        String resp = banco.executa(sql,false,database);
 
         return resp;
     }
@@ -72,10 +77,10 @@ public class Sqlcommands {
         String Arraypedido[] = new String[5];
         Arraypedido = pedido.split(",");
         
-        sql = "INSERT INTO musicas VALUES"
-                + "("+Arraypedido[1]+","+Arraypedido[2]+","+Arraypedido[3]+");";
+        sql = "INSERT INTO Musicas(musica,album,artista) VALUES"
+                + "('"+Arraypedido[1]+"','"+Arraypedido[2]+"','"+Arraypedido[3]+"');";
         
-        String resp = banco.executa(sql);
+        String resp = banco.executa(sql,false,database);
 
         
         return resp;

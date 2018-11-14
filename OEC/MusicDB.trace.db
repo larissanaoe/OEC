@@ -1,3 +1,0 @@
-2018-11-13 08:40:35 jdbc[3]: exception
-org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE IF NOT EXISTS MUSICAS(ID INT AUTO_INCREMENT PRIMAY[*] KEY, MUSICA VARCHAR(30) NOT NULL, ALBUM VARCHAR(20) NOT NULL, ARTISTA VARCHAR(25) NOT NULL) "; expected "(, NOT, NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, CHECK, REFERENCES, ,, )"; SQL statement:
-create table if not exists Musicas(id int auto_increment primay key, musica VARCHAR(30) not null, album VARCHAR(20) not null, artista VARCHAR(25) not null) [42001-197]

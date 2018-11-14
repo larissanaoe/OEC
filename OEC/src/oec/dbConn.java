@@ -18,30 +18,33 @@ import java.util.logging.Logger;
  * @author augusto
  */
 public class dbConn {
-    public String executa (String statement) throws SQLException{
+    public String executa (String statement,boolean select,String database) throws SQLException{
         String result = "";
         try {
             Class.forName("org.h2.Driver");
-            Connection con = DriverManager.getConnection("jdbc:h2:./MusicDB","root","...");
+            Connection con = DriverManager.getConnection("jdbc:h2:./"+database ,"root","...");
             
             Statement st = con.createStatement();
-            st.execute(statement);
+            if (select){
+                ResultSet rs = st.executeQuery(statement);
             
-            ResultSet rs = st.executeQuery(statement);
-            
-            result = rs.getString("musica") + "," + rs.getString("album") + "," + rs.getString("artista");
-            while (rs.next()) {
-                int id = rs.getInt("id");
-                String musica = rs.getString("musica");
-                String album = rs.getString("album");
-                String artista = rs.getString("artista");
-                result = result+ "|" + musica + "," + album + "," + artista;
+                result = rs.getString("musica") + "," + rs.getString("album") + "," + rs.getString("artista");
+                while (rs.next()) {
+                    int id = rs.getInt("id");
+                    String musica = rs.getString("musica");
+                    String album = rs.getString("album");
+                    String artista = rs.getString("artista");
+                    result = result+ "|" + musica + "," + album + "," + artista;
+                }
+                
+            }else{
+                result = String.valueOf(st.execute(statement));
             }
             
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(dbConn.class.getName()).log(Level.SEVERE, null, ex);System.out.println("dnNm");
         }
-        
         return result;
+        
     }
 }

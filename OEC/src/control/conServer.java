@@ -2,48 +2,46 @@
 package control;
 
 import java.io.PrintStream;
+import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Scanner;
 
 
 
-public class conServer extends Thread {
+public class conServer {
     String operation; 
-    int Socket;
-    public void run(){
+    Socket Socket;
+    Scanner in;
+    PrintStream saida;
+    String msg;
+
+    public conServer(String operation, Socket Socket) {
+        this.operation = operation;
+        this.Socket = Socket;
+    }
+    
+    
+    public String Connect(){
             
         Scanner texto;
-        Socket cliente; 
         
         try {
-
-            cliente = new Socket("127.0.0.1", Socket);
-            PrintStream saida = new PrintStream(cliente.getOutputStream());
+            saida = new PrintStream(Socket.getOutputStream());
                 
             saida.println(operation);
-                
             
+            in = new Scanner(Socket.getInputStream());
+            
+            msg = in.nextLine();
+            System.out.println("Recebido: " + msg + 
+                        " de "+Socket.getInetAddress().getHostAddress());
+            saida.println("recebido.");
             
             
             
         } catch (Exception e) {
             System.out.println("Erro: " + e.getMessage());
         }
-    }
-
-    public String getOperation() {
-        return operation;
-    }
-
-    public void setOperation(String operation) {
-        this.operation = operation;
-    }
-
-    public int getSocket() {
-        return Socket;
-    }
-
-    public void setSocket(int Socket) {
-        this.Socket = Socket;
+        return msg;
     }
 }
