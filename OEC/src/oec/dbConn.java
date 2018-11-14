@@ -19,13 +19,14 @@ import java.util.logging.Logger;
  */
 public class dbConn {
     public String executa (String statement,boolean select,String database) throws SQLException{
-        String result = "";
+        String result = "sucesso";
+        Statement st;
         try {
             Class.forName("org.h2.Driver");
-            Connection con = DriverManager.getConnection("jdbc:h2:./"+database ,"root","...");
+            Connection con = DriverManager.getConnection("jdbc:h2:~/"+database ,"sa","");
             
-            Statement st = con.createStatement();
             if (select){
+                st = con.createStatement();
                 ResultSet rs = st.executeQuery(statement);
             
                 result = rs.getString("musica") + "," + rs.getString("album") + "," + rs.getString("artista");
@@ -35,14 +36,20 @@ public class dbConn {
                     String album = rs.getString("album");
                     String artista = rs.getString("artista");
                     result = result+ "|" + musica + "," + album + "," + artista;
+                    System.out.println(result);
                 }
                 
             }else{
-                result = String.valueOf(st.execute(statement));
+                System.out.println("select "+String.valueOf(select));
+                st = con.createStatement();
+                System.out.println("criou statement");
+                st.execute(statement);
             }
             
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(dbConn.class.getName()).log(Level.SEVERE, null, ex);System.out.println("dnNm");
+            
+            return ex.getMessage();
         }
         return result;
         

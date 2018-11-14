@@ -1,6 +1,7 @@
 
 package oec;
 
+import java.io.IOException;
 import java.io.PrintStream;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
@@ -9,9 +10,13 @@ import java.net.Socket;
 import java.sql.SQLException;
 import java.util.Scanner;
 
+//augusto de arruda kono RA 20760841
+//Larissa Fontes Naoe RA 20854181
+//Arthur Montoya  RA 20761385
+
 public class server {
 
-    public static void main(String[] args) throws SQLException {
+    public static void main(String[] args) throws SQLException, IOException {
         Scanner scanint = new Scanner(System.in);
         Scanner scan = new Scanner(System.in);
 
@@ -46,13 +51,14 @@ public class server {
             try{
                System.out.println("Aguardando a conexão de um cliente...");
                cliente = srv.accept(); //retorna um socket declarado, no nosso caso cliente
-               System.out.println("Conectado com" + cliente.getInetAddress().getHostAddress());// mostro com quem foi feita a conexão
+               System.out.println("Conectado com " + cliente.getInetAddress().getHostAddress());// mostro com quem foi feita a conexão
 
             }catch (Exception e){
                 System.out.println("Erro ao conectar com o cliente");
                 System.out.println(e.getMessage());
                 return;
             }
+            PrintStream saida = new PrintStream(cliente.getOutputStream());
 
             //Comunicação
             try{
@@ -62,32 +68,33 @@ public class server {
                 array = msg.split(",");
                 Sqlcommands comando = new Sqlcommands(database);
 
+
                 if(array[0].equals("select")){
+                    System.out.println("select iniciado");
                     resp = comando.select(msg);
-                    
+                    saida.println(resp);
                 }else if(array[0].equals("insert")){
+                    System.out.println("insert iniciado");
                     resp = comando.insert(msg);
-
+                    saida.println(resp);
                 }else if(array[0].equals("delete")){
+                    System.out.println("delete iniciado");
                     resp = comando.delete(array[1]);
-
+                    saida.println(resp);
                 }else if(array[0].equals("update")){
+                    System.out.println("update iniciado");
                     resp = comando.update(msg);
-
+                    saida.println(resp);
                 }else{
-                    System.out.println("comando mal definido");
+                    saida.println("comando mal definido");
                 }
-                
-                PrintStream saida = new PrintStream(cliente.getOutputStream());
-
-                saida.println(resp);
-                
-
+                                
                 System.out.println("Recebido: " + msg);
 
             }catch (Exception e){
                 System.out.println("Erro na troca de mensagens.");
                 System.out.println(e.getMessage());
+                saida.println(e.getMessage());
                 return;
             }
 

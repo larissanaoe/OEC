@@ -26,8 +26,11 @@ public class Sqlcommands {
         sql = "UPDATE Musicas " +
                     "SET musica= '"+ Arraypedido[1] +"', album= '"+ Arraypedido[2]+"',artista= '"+ Arraypedido[3]+
                     "' WHERE id= '"+ Arraypedido[4]+"';";
+        System.out.println("query criada "+sql );
         
         String resp = banco.executa(sql,false,database);
+        
+        System.out.println("resposta "+resp);
         
         return resp;
     }
@@ -54,8 +57,12 @@ public class Sqlcommands {
             sql = "SELECT * from Musicas;";
             
         }
+        System.out.println("query criada "+sql );
+
         
         String resp = banco.executa(sql,true,database);
+        
+        System.out.println("resposta "+resp);
 
         return resp;
     }
@@ -65,8 +72,11 @@ public class Sqlcommands {
 
 
         sql = "delete from Musicas WHERE id= '"+ pedido +"';";
+        System.out.println("query criada "+sql );
         
         String resp = banco.executa(sql,false,database);
+        
+        System.out.println("resposta "+resp);
 
         return resp;
     }
@@ -79,9 +89,11 @@ public class Sqlcommands {
         
         sql = "INSERT INTO Musicas(musica,album,artista) VALUES"
                 + "('"+Arraypedido[1]+"','"+Arraypedido[2]+"','"+Arraypedido[3]+"');";
+        System.out.println("query criada "+sql );
         
         String resp = banco.executa(sql,false,database);
 
+        System.out.println("resposta "+resp);
         
         return resp;
     }

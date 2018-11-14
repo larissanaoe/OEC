@@ -6,6 +6,10 @@ import java.net.Socket;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+//augusto de arruda kono RA 20760841
+//Larissa Fontes Naoe RA 20854181
+//Arthur Montoya  RA 20761385
+
 public class Balancer {
 
     public static void main(String[] args) throws IOException {

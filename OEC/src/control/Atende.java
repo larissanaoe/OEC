@@ -30,12 +30,12 @@ public class Atende extends Thread{
             msg = in.nextLine();
             System.out.println("Recebido: " + msg + 
                         " de "+cli.getInetAddress().getHostAddress());
-            out.println("recebido.");
             
             
             conServer connection = new conServer(msg, server);
             
             resposta = connection.Connect();
+            out.println("recebido.");
             
             out.println(resposta);
             

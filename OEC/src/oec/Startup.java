@@ -24,8 +24,9 @@ public class Startup {
                                                         + " musica VARCHAR(30) not null,"
                                                         + " album VARCHAR(20) not null,"
                                                         + " artista VARCHAR(25) not null)";
+        System.out.println("chega aqui "+criaTabela);
     
-    conection.executa(criaTabela,false,database);
+        System.out.println("tabela criada "+conection.executa(criaTabela,false,database));
 
     }
 }

@@ -8,6 +8,10 @@ import java.net.InetAddress;
 import java.net.Socket;
 import java.util.Scanner;
 
+//augusto de arruda kono RA 20760841
+//Larissa Fontes Naoe RA 20854181
+//Arthur Montoya  RA 20761385
+
 public class cliente {
 
     
@@ -99,7 +103,7 @@ public class cliente {
                 System.out.println("1 - Buscar por nome de música");
                 System.out.println("2 - Buscar por nome do álbum");
                 System.out.println("3 - Buscar por nome do artista");
-                System.out.println("3 - Buscar tudo");
+                System.out.println("4 - Buscar tudo");
                 System.out.println("Digite a opcao desejada: ");
                 int optionSearch = scanint.nextInt();
                 
@@ -151,8 +155,11 @@ public class cliente {
             saida.println(operation);
             
             ino = new Scanner(cliente.getInputStream());
-            System.out.println(ino.nextLine());
-            System.out.println(ino.nextLine());
+            
+            while(ino.hasNextLine()){
+                System.out.println(ino.nextLine());
+            }
+            
 
         } 
             catch (Exception e) {
